@@ -1,0 +1,30 @@
+{%  extends 'person_register/main.html' %}
+
+{% block content %}
+<table class="table table-sm">
+	<a style="margin-left: 60em;" href="{% url 'create_person' %}" class="btn btn-outline-success">
+		<i class="fas fa-plus"></i> Agregar
+	</a>
+	<tr>
+		<th>Nombre</th>
+		<th>Edad</th>
+		<th>Fecha de nacimiento</th>
+		<th>Rol</th>
+		<th></th>
+		<td>
+			
+		</td>	
+	</tr>
+		{% for person in persons %}
+			<tr>
+				<td>{{person.nombre}}</td>
+				<td>{{person.edad}}</td>
+				<td>{{person.fecha}}</td>
+				<td>{{person.position}}</td>
+				<td><a class="btn btn-outline-info" href="{% url 'update_person' person.id %}">Actualizar</a></td>
+				<td><a class="btn btn-outline-danger" href="{% url 'delete_person' person.id %}">Eliminar</a></td>
+			</tr>
+		{% endfor %}		
+</table>
+{% endblock %}
+

@@ -1,0 +1,10 @@
+{%  extends 'person_register/main.html' %}
+{% load static %}
+
+{% block content %}
+<form action="" method="POST">
+	{% csrf_token %}
+	{{ form }}
+	<input class="btn btn-outline-success" type="submit" name="Submit">
+</form>
+{% endblock %}
